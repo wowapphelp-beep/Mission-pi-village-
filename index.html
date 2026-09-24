@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,92 +7,126 @@
     <title>Mission Pi Village</title>
 
     <meta name="description"
-          content="Mission Pi Village - One Village, One Leader, One Vision.">
+          content="Mission Pi Village - एक गाँव • एक लीडर • एक विज़न">
 
     <style>
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #0b0712;
-            color: white;
+            background: #08050d;
+            color: #ffffff;
             line-height: 1.6;
         }
 
+        /* HEADER */
+
         header {
-            padding: 20px;
-            text-align: center;
-            background: #160b27;
-            border-bottom: 1px solid #3b205a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 6, 18, 0.95);
+            border-bottom: 1px solid #3a2054;
+            padding: 15px 20px;
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 21px;
             font-weight: bold;
-            color: #d8a7ff;
-        }
-
-        nav {
-            margin-top: 12px;
+            color: #d9a3ff;
         }
 
         nav a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
-            margin: 0 8px;
+            margin-left: 18px;
             font-size: 14px;
         }
 
+        nav a:hover {
+            color: #d9a3ff;
+        }
+
+        /* HERO */
+
         .hero {
-            min-height: 80vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(180deg, #1b0b30, #0b0712);
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(circle at top, #35115c 0%, #160923 35%, #08050d 75%);
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: #c98cff;
-        }
-
-        .tagline {
-            font-size: 22px;
-            color: #f1d8ff;
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #8e44cc;
+            border-radius: 30px;
+            color: #e3c4ff;
+            font-size: 13px;
             margin-bottom: 20px;
         }
 
-        .hero p {
-            color: #c9bfd2;
-            max-width: 650px;
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #c878ff;
+        }
+
+        .tagline {
+            font-size: 25px;
+            color: #f1d9ff;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 700px;
             margin: auto;
+            color: #bdb2c7;
+            font-size: 17px;
         }
 
         .buttons {
-            margin-top: 30px;
+            margin-top: 32px;
         }
 
         .btn {
             display: inline-block;
-            padding: 13px 22px;
-            margin: 6px;
+            padding: 14px 24px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            margin: 6px;
+            transition: 0.2s;
         }
 
         .primary {
@@ -100,102 +134,278 @@
             color: white;
         }
 
+        .primary:hover {
+            background: #a85be8;
+        }
+
         .secondary {
-            border: 1px solid #9d63c7;
+            border: 1px solid #9b63c5;
             color: white;
         }
 
+        .secondary:hover {
+            background: #241232;
+        }
+
+        /* GENERAL SECTION */
+
         section {
-            padding: 60px 20px;
-            max-width: 1100px;
+            padding: 75px 20px;
+            max-width: 1150px;
             margin: auto;
         }
 
-        section h2 {
+        .section-title {
             text-align: center;
-            font-size: 32px;
+            font-size: 36px;
             margin-bottom: 15px;
         }
 
-        .section-text {
+        .section-description {
             text-align: center;
-            color: #bdb3c5;
-            max-width: 700px;
-            margin: 0 auto 35px;
+            max-width: 720px;
+            margin: 0 auto 45px;
+            color: #b8adbf;
         }
+
+        /* PILLARS */
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
         .card {
-            background: #160d21;
-            border: 1px solid #332044;
-            border-radius: 12px;
-            padding: 25px;
+            background: #130b1c;
+            border: 1px solid #332040;
+            border-radius: 14px;
+            padding: 28px 22px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #8e44cc;
+        }
+
+        .icon {
+            font-size: 38px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
+            color: #d49aff;
             margin-bottom: 10px;
-            color: #d09aff;
         }
 
         .card p {
-            color: #bdb3c5;
-            font-size: 15px;
-        }
-
-        .vision {
-            background: #13091d;
-            text-align: center;
-            border-top: 1px solid #2e193e;
-            border-bottom: 1px solid #2e193e;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: #08050d;
-            color: #8f8498;
+            color: #afa4b7;
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+        /* HOW IT WORKS */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .number {
+            width: 50px;
+            height: 50px;
+            margin: auto auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #8e44cc;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .step h3 {
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #a99eaf;
+            font-size: 14px;
+        }
+
+        /* VILLAGE PROGRESS */
+
+        .progress-section {
+            background: #100817;
+            border-top: 1px solid #2e193e;
+            border-bottom: 1px solid #2e193e;
+            max-width: none;
+        }
+
+        .stats {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 25px;
+        }
+
+        .stat-number {
+            font-size: 38px;
+            font-weight: bold;
+            color: #d28cff;
+        }
+
+        .stat-label {
+            color: #a99eaf;
+            margin-top: 5px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            padding: 90px 20px;
+            background: radial-gradient(circle, #32124e, #08050d 65%);
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: auto;
+            color: #b8adbf;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #050308;
+            border-top: 1px solid #24152f;
+            text-align: center;
+            padding: 35px 20px;
+            color: #817688;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #c98cff;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .tagline {
+                font-size: 21px;
+            }
+
+            .cards,
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero {
+                min-height: 80vh;
+            }
+
             .hero h1 {
                 font-size: 36px;
             }
 
             .tagline {
-                font-size: 18px;
+                font-size: 19px;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 5px;
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .cards,
+            .steps,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <div class="logo">🌍 Mission Pi Village</div>
+<!-- HEADER -->
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#mission">Mission</a>
-        <a href="#join">Join</a>
-        <a href="#support">Support</a>
-    </nav>
+<header>
+
+    <div class="nav-container">
+
+        <div class="logo">
+            🌍 Mission Pi Village
+        </div>
+
+        <nav>
+            <a href="#mission">Mission</a>
+            <a href="#process">How It Works</a>
+            <a href="#join">Join</a>
+        </nav>
+
+    </div>
+
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
     <div class="hero-content">
+
+        <div class="badge">
+            COMMUNITY • EDUCATION • UTILITY
+        </div>
 
         <h1>
             Mission <span>Pi Village</span>
@@ -205,19 +415,25 @@
             एक गाँव • एक लीडर • एक विज़न
         </div>
 
-        <p>
-            Building village communities through education,
-            blockchain knowledge, local businesses and real-world utility.
+        <p class="hero-description">
+
+            एक community initiative जो गाँवों में
+            Blockchain education, digital awareness,
+            local businesses और real-world utility को
+            बढ़ावा देने के लिए लोगों को एक साथ जोड़ता है।
+
         </p>
 
         <div class="buttons">
+
             <a href="#join" class="btn primary">
-                Join the Mission
+                🚀 Join Mission
             </a>
 
-            <a href="#about" class="btn secondary">
+            <a href="#mission" class="btn secondary">
                 Learn More
             </a>
+
         </div>
 
     </div>
@@ -225,60 +441,82 @@
 </section>
 
 
-<section id="about">
-
-    <h2>What is Mission Pi Village?</h2>
-
-    <p class="section-text">
-        Mission Pi Village is a community initiative focused on
-        education, digital awareness, blockchain knowledge,
-        local entrepreneurship and ecosystem development.
-    </p>
-
-</section>
-
+<!-- MISSION -->
 
 <section id="mission">
 
-    <h2>Our Mission</h2>
+    <h2 class="section-title">
+        हमारा Mission
+    </h2>
 
-    <p class="section-text">
-        Our journey begins with education and community building
-        and gradually moves toward local digital and economic utility.
+    <p class="section-description">
+
+        शिक्षा से शुरुआत करके community organization,
+        local merchants और real-world utility की ओर
+        एक structured journey बनाना।
+
     </p>
+
 
     <div class="cards">
 
         <div class="card">
-            <h3>🎓 Education</h3>
+
+            <div class="icon">🎓</div>
+
+            <h3>Education</h3>
+
             <p>
-                Learn blockchain, wallets, digital security,
-                Pi Network and Web3 concepts.
+                Blockchain, wallet security, Pi Network,
+                Web3 और digital technology की basic
+                से advanced learning.
             </p>
+
         </div>
 
-        <div class="card">
-            <h3>👑 Village Leader</h3>
-            <p>
-                Build a local team and coordinate Mission Pi Village
-                activities.
-            </p>
-        </div>
 
         <div class="card">
-            <h3>🏪 Merchants</h3>
+
+            <div class="icon">👑</div>
+
+            <h3>Village Leader</h3>
+
             <p>
-                Connect local shops, businesses and service providers
-                with the community.
+                हर Mission Village में local leader और
+                core team बनाकर community activities
+                को organize करना।
             </p>
+
         </div>
 
+
         <div class="card">
-            <h3>🔄 Utility</h3>
+
+            <div class="icon">🏪</div>
+
+            <h3>Local Merchants</h3>
+
             <p>
-                Encourage real goods, services and useful digital
-                ecosystem activities.
+                Local shops, businesses और service
+                providers को digital ecosystem से
+                connect करना।
             </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🔄</div>
+
+            <h3>Real Utility</h3>
+
+            <p>
+                वास्तविक goods, services और useful
+                digital activities को community में
+                बढ़ावा देना।
+            </p>
+
         </div>
 
     </div>
@@ -286,60 +524,237 @@
 </section>
 
 
-<section class="vision">
+<!-- HOW IT WORKS -->
 
-    <h2>From Village to Global Network 🌍</h2>
+<section id="process">
 
-    <p class="section-text">
-        One village can start a movement.
-        Connected villages can build a network.
+    <h2 class="section-title">
+        Mission कैसे चलेगा?
+    </h2>
+
+    <p class="section-description">
+
+        एक simple और transparent process के माध्यम से
+        हर गाँव अपनी journey शुरू कर सकता है।
+
     </p>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="number">1</div>
+
+            <h3>Village</h3>
+
+            <p>
+                गाँव Mission Pi Village में register होता है।
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">2</div>
+
+            <h3>Leader</h3>
+
+            <p>
+                एक Mission Leader और core team तैयार होती है।
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">3</div>
+
+            <h3>Education</h3>
+
+            <p>
+                Community को blockchain और digital education दी जाती है।
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">4</div>
+
+            <h3>Utility</h3>
+
+            <p>
+                Local businesses और real-world utility activities शुरू होती हैं।
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+<!-- PROGRESS -->
+
+<div class="progress-section">
+
+    <section>
+
+        <h2 class="section-title">
+            Mission Progress
+        </h2>
+
+        <p class="section-description">
+
+            यह dashboard future में verified Mission data
+            दिखाने के लिए इस्तेमाल किया जाएगा।
+
+        </p>
+
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Villages
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Leaders
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Merchants
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Utility Activities
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- JOIN -->
 
 <section id="join">
 
-    <h2>Join Mission Pi Village</h2>
+    <h2 class="section-title">
+        Mission में शामिल हों 🤝
+    </h2>
 
-    <p class="section-text">
-        Become a Mission Leader, volunteer, pioneer or local merchant.
-        Together we can build knowledge and utility from the ground up.
+    <p class="section-description">
+
+        आप Mission Leader, Volunteer, Pioneer या
+        Local Merchant के रूप में योगदान कर सकते हैं।
+
     </p>
 
-    <div class="buttons" style="text-align:center;">
+
+    <div style="text-align:center;">
+
         <a href="#" class="btn primary">
-            Become a Mission Leader
+            👑 Become a Mission Leader
         </a>
 
         <a href="#" class="btn secondary">
-            Register Your Village
+            🏘️ Register Your Village
         </a>
+
     </div>
 
 </section>
 
 
-<section id="support">
+<!-- CTA -->
 
-    <h2>Support the Mission 💜</h2>
+<div class="cta">
 
-    <p class="section-text">
-        Support community education and ecosystem development.
-        More information about transparent support options will be added here.
+    <h2>
+        From Village to Global Network 🌍
+    </h2>
+
+    <p>
+
+        एक गाँव शुरुआत कर सकता है।
+        जुड़े हुए गाँव एक बड़ा community network बना सकते हैं।
+
     </p>
 
-</section>
+    <div class="buttons">
 
+        <a href="#join" class="btn primary">
+            Start Your Village
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-    © 2026 Mission Pi Village  
-    <br><br>
-    A community initiative. Not an official Pi Network / Pi Core Team program
-    unless explicitly stated by Pi Network.
+    <p>
+        © 2026 <strong>Mission Pi Village</strong>
+    </p>
+
+    <p>
+        A community initiative focused on education,
+        community building and ecosystem development.
+    </p>
+
+    <br>
+
+    <p>
+        Mission Pi Village is not an official Pi Network /
+        Pi Core Team program unless explicitly stated by Pi Network.
+    </p>
 
 </footer>
 
+
 </body>
-  </html>
+</html>
